@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  display: flex;
+  align-items: center;
+  background-color: #000000;
+  min-height: 100vh;
+  justify-content: center;
+}
+.text-wrapper {
+  position: relative;
+  perspective: 100rem;
+}
+
+.text-original > span,
+.text-reflection > span {
+  font-family: "Tilt Warp", sans-serif;
+  letter-spacing: -0.5rem;
+  font-size: 12rem;
+  animation: glow 3s ease-in-out infinite;
+  animation-delay: var(--delay);
+  color: rgba(0, 149, 255, 0.25);
+  -webkit-text-stroke: 1px rgba(0, 149, 255, 0.1);
+  padding: 1rem;
+}
+
+.text-reflection {
+  position: absolute;
+  top: 8.2rem;
+  left: 0;
+  opacity: 0.4;
+  mask-image: linear-gradient(to top, #171717, transparent);
+  -webkit-mask-image: linear-gradient(to top, #171717, transparent);
+  transform-style: preserve-3d;
+  transform: rotateX(-130deg) scale(1.04);
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    color: rgba(0, 149, 255, 0.452);
+    text-shadow: 0 0 10px rgb(0, 149, 255), 0 0 50px rgb(0, 149, 255),
+      0 0 100px rgba(0, 149, 255, 0.25);
+  }
+  10%,
+  90% {
+    color: rgba(0, 149, 255, 0.1);
+    text-shadow: none;
+  }
+}
+@media (max-width: 1250px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 1000px) {
+  html {
+    font-size: 40%;
+  }
+}
+@media (max-width: 800px) {
+  html {
+    font-size: 35%;
+  }
+}
+@media (max-width: 690px) {
+  html {
+    font-size: 30%;
+  }
+}
+@media (max-width: 575px) {
+  html {
+    font-size: 25%;
+  }
+}
+@media (max-width: 420px) {
+  html {
+    font-size: 20%;
+  }
+}
