@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: "Lato", sans-serif;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+}
+
+.input {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #5715c0;
+  box-shadow: 0 2px 5px rgba(87, 21, 192, 0.3);
+  padding-right: 40px;
+  color: #141414;
+  transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  font-size: 17px;
+}
+
+.input::placeholder {
+  color: rgba(20, 20, 20, 0.7);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.icon:active {
+  transform: scale(0.9);
+}
+.search-icon {
+  color: #fff;
+  height: 24px;
+  transition: color 0.3s ease;
+}
+
+.icon:focus ~ .input,
+.input:focus {
+  box-shadow: 0 2px 5px rgba(87, 21, 192, 0.2);
+  width: 250px;
+  border-radius: 0;
+  background-color: transparent;
+  border-bottom: 3px solid #5715c0;
+  color: rgba(20, 20, 20, 0.8);
+  padding: 10px 20px;
+}
+
+.input:focus::placeholder {
+  opacity: 0.6;
+}
+
+.icon:focus-within .search-icon,
+.input-container:focus-within .search-icon {
+  color: #5715c0;
+}
+
+@media (max-width: 480px) {
+  .icon:focus ~ .input,
+  .input:focus {
+    width: 200px;
+  }
+}
